@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package device;
+
+service UserService {
+    rpc FindOne (DeviceById) returns (Device) {}
+}
+  
+message DeviceById {
+      string id = 1;
+}
+    
+message Device {
+      string id = 1;
+      string name = 2;
+}
+    

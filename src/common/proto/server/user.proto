@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package user;
+
+service UserService {
+  rpc FindOne (UserByEmail) returns (User) {}
+}
+
+message UserByEmail {
+    string email = 1;
+}
+  
+message User {
+    int32 id = 1;
+    string email = 2;
+    string name = 3;
+    string password = 4;
+    string token = 5;
+    Role role = 6;
+}
+
+message Role {
+    int32 id = 1;
+    string type = 2;
+}
+  

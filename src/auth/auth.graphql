@@ -1,0 +1,49 @@
+input SignUpInput {
+  email: String!
+  name: String!
+  password: String!
+  roleId: Int!
+}
+
+input SignInInput {
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  id: Int!
+  email: String
+  name: String
+  password: String
+}
+
+input CreateRoleInput {
+  type: String!
+}
+
+type User {
+  id: Int!
+  email: String!
+  name: String!
+  password: String
+  token: String!
+  refreshToken: String!
+  role: Role!
+}
+
+type Role {
+  id: Int!
+  type: String!
+}
+
+type Query {
+  users: [User]!
+  user(email: String!): User!
+}
+
+type Mutation {
+  createRole(createRoleInput: CreateRoleInput!): Role!
+  signUp(signUpInput: SignUpInput!): User!
+  signIn(signInInput: SignInInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+}
