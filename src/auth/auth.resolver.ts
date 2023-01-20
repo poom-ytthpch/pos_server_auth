@@ -3,8 +3,9 @@ import { AuthService } from './auth.service';
 import { CreateAuthInput } from './dto/create-auth.input';
 import { UpdateAuthInput } from './dto/update-auth.input';
 import { JwtAuthGuard } from 'src/common/jwt/jwt_auth.guard';
-import * as types from '../types/graphql/graphql';
 import { UseGuards } from '@nestjs/common';
+
+import * as types from 'src/types/graphql/graphql';
 
 @Resolver('Auth')
 export class AuthResolver {
